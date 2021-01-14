@@ -1,0 +1,113 @@
+priority -50
+
+# if statement
+snippet if "if"
+if ($1) begin
+	$0
+end
+endsnippet
+
+# if/else statements
+snippet ife "if else"
+if ($1) begin
+	$2
+end else begin
+	$3
+end
+endsnippet
+
+# Else if statement
+snippet eif "else if"
+else if (${1}) begin
+	${0}
+end
+endsnippet
+
+# Else statement
+snippet el "else"
+else begin
+	${0}
+end
+endsnippet
+
+# While statement
+snippet wh "while"
+while (${1}) begin
+	${0}
+end
+endsnippet
+
+# Repeat Loop
+snippet rep "repeat"
+repeat (${1}) begin
+	${0}
+end
+endsnippet
+
+# Case statement
+snippet case "case"
+case (${1:/* variable */})
+	${2:/* value */}: begin
+		${3}
+	end
+	default: begin
+		${4}
+	end
+endcase
+endsnippet
+
+# CaseZ statement
+snippet casez "casez"
+casez (${1:/* variable */})
+	${2:/* value */}: begin
+		${3}
+	end
+	default: begin
+		${4}
+	end
+endcase
+endsnippet
+
+# Always block
+snippet al "always"
+always @(${1:/* sensitive list */}) begin
+	${0}
+end
+endsnippet
+
+# Module block
+snippet mod "module"
+module ${1:module_name} (${2});
+	${0}
+endmodule
+endsnippet
+
+# For
+snippet for "for"
+for (int ${2:i} = 0; $2 < ${1:count}; $2${3:++}) begin
+	${4}
+end
+endsnippet
+
+# Forever
+snippet forev "forever"
+forever begin
+	${0}
+end
+endsnippet
+
+# Function
+snippet fun "function"
+function ${1:void} ${2:name}(${3});
+	${0}
+endfunction: $2
+endsnippet
+
+# Task
+snippet task "task"
+task ${1:name}(${2});
+	${0}
+endtask: $1
+endsnippet
+
+# vim:ft=snippets:
